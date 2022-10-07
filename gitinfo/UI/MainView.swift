@@ -17,7 +17,7 @@ struct MainView: View
     {
         NavigationView
         {
-            VStack
+            VStack(spacing: 0)
             {
                 TextField("Enter Name", text: $modelView.searchName, onCommit: {
                     Task
@@ -27,8 +27,13 @@ struct MainView: View
                 })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .background(Color("darkGlossyGray"))
+                    .padding(2)
+                    .cornerRadius(12.0)
      
-                UserList()
+                UserList().navigationBarTitle("Gitinfo", displayMode: .inline)
+                    .navigationBarTitle("Gitinfo", displayMode: .inline)
+                    .navigationBarItems(trailing: TopBar())
             }
         }
     }

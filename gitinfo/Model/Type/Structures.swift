@@ -17,8 +17,9 @@ protocol UserGithub: Hashable, Codable
     var reposUrl: URL { get }
 }
 
-struct UserInfo: UserGithub
+struct UserInfo: UserGithub ,Identifiable//, Comparable
 {
+    var id: Int?
     let login: String
     let avatarUrl: URL
     let followersUrl: URL
@@ -40,4 +41,16 @@ struct UsersInfo: Codable
 enum LoaderErrors: Error
 {
     case invalidURL
+}
+
+
+struct RepoInfo: Hashable, Codable
+{
+    let name: String
+    let description: String?
+    let updatedAt: String?
+    let defaultBranch: String?
+    let forks: Int?
+    let stargazersCount: Int?
+    let language: String?
 }

@@ -53,6 +53,9 @@ struct UserItem: View
             }
             Spacer()
         }
+        .background(Color("darkGlossyGray"))
+        .padding(2)
+        .cornerRadius(12.0)
     }
 }
 

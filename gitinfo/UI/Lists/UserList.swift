@@ -19,7 +19,13 @@ struct UserList: View
             {
                 ForEach(0 ..< modelView.listUserInfo.count, id: \.self)
                 {
-                    UserItem(userInfo: modelView.listUserInfo[$0])
+                    i in
+                    
+                    NavigationLink(destination: RepoList(index: i).navigationBarTitle(modelView.listUserInfo[i].login, displayMode: .inline))
+                    {
+                        UserItem(userInfo: modelView.listUserInfo[i])
+                    }
+                    .accentColor(Color("fontSystem"))
                 }
             }
         }
