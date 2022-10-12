@@ -33,6 +33,10 @@ struct RepoList: View
         {
             await self.modelView.loadRepoInfo(index: index)
         }
+        .onDisappear()
+        {
+            modelView.clearRepoList()
+        }
     }
 }
 

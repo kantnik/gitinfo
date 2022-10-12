@@ -19,6 +19,10 @@
 		3A3F45E728EC84610026A06B /* gitinfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F45E628EC84610026A06B /* gitinfoTests.swift */; };
 		3A3F45F128EC84620026A06B /* gitinfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F45F028EC84620026A06B /* gitinfoUITests.swift */; };
 		3A3F45F328EC84620026A06B /* gitinfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F45F228EC84620026A06B /* gitinfoUITestsLaunchTests.swift */; };
+		3A7293F228F5A89E0087A5DE /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 3A7293F128F5A89E0087A5DE /* BetterSafariView */; };
+		3AC6492F28F68D20006C5FDA /* AuthorizationGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6492E28F68D20006C5FDA /* AuthorizationGit.swift */; };
+		3AC6493128F6BB8F006C5FDA /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6493028F6BB8F006C5FDA /* UserView.swift */; };
+		3AC6493328F6F617006C5FDA /* PrivateDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6493228F6F617006C5FDA /* PrivateDataLoader.swift */; };
 		3AFE4F0B28ED583000EAF9D3 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4F0A28ED583000EAF9D3 /* UserList.swift */; };
 		3AFE4F0D28ED585F00EAF9D3 /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4F0C28ED585F00EAF9D3 /* RepoList.swift */; };
 		3AFE4F0F28ED589200EAF9D3 /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4F0E28ED589200EAF9D3 /* RepoItem.swift */; };
@@ -58,6 +62,10 @@
 		3A3F45EC28EC84620026A06B /* gitinfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gitinfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3F45F028EC84620026A06B /* gitinfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gitinfoUITests.swift; sourceTree = "<group>"; };
 		3A3F45F228EC84620026A06B /* gitinfoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gitinfoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3A7293F328F5AF500087A5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3AC6492E28F68D20006C5FDA /* AuthorizationGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationGit.swift; sourceTree = "<group>"; };
+		3AC6493028F6BB8F006C5FDA /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		3AC6493228F6F617006C5FDA /* PrivateDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateDataLoader.swift; sourceTree = "<group>"; };
 		3AFE4F0A28ED583000EAF9D3 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		3AFE4F0C28ED585F00EAF9D3 /* RepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
 		3AFE4F0E28ED589200EAF9D3 /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
@@ -69,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7293F228F5A89E0087A5DE /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3A277CB528EEEC00008F4F59 /* DataLoader.swift */,
+				3AC6493228F6F617006C5FDA /* PrivateDataLoader.swift */,
 			);
 			path = DataReader;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 		3A3F45D428EC84440026A06B /* gitinfo */ = {
 			isa = PBXGroup;
 			children = (
+				3A7293F328F5AF500087A5DE /* Info.plist */,
 				3A277CB328EEEB27008F4F59 /* ModelView */,
 				3A3F460028EC88620026A06B /* Model */,
 				3A3F45FF28EC88510026A06B /* UI */,
@@ -189,6 +200,7 @@
 				3A0F258628EC9CB800B40FF3 /* MainView.swift */,
 				3A277CB728EF24D1008F4F59 /* TopBar.swift */,
 				3A277CB928EF2601008F4F59 /* AuthView.swift */,
+				3AC6493028F6BB8F006C5FDA /* UserView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -196,10 +208,19 @@
 		3A3F460028EC88620026A06B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3AC6492D28F68CA8006C5FDA /* Authorization */,
 				3A277CB428EEEB74008F4F59 /* DataReader */,
 				3AFE4F1028ED643300EAF9D3 /* Type */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3AC6492D28F68CA8006C5FDA /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				3AC6492E28F68D20006C5FDA /* AuthorizationGit.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		3AFE4F1028ED643300EAF9D3 /* Type */ = {
@@ -226,6 +247,9 @@
 			dependencies = (
 			);
 			name = gitinfo;
+			packageProductDependencies = (
+				3A7293F128F5A89E0087A5DE /* BetterSafariView */,
+			);
 			productName = gitinfo;
 			productReference = 3A3F45D228EC84440026A06B /* gitinfo.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +322,9 @@
 				Base,
 			);
 			mainGroup = 3A3F45C928EC84440026A06B;
+			packageReferences = (
+				3A7293F028F5A89E0087A5DE /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+			);
 			productRefGroup = 3A3F45D328EC84440026A06B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -350,6 +377,9 @@
 				3A277CB828EF24D2008F4F59 /* TopBar.swift in Sources */,
 				3A277CB628EEEC00008F4F59 /* DataLoader.swift in Sources */,
 				3A277CBA28EF2601008F4F59 /* AuthView.swift in Sources */,
+				3AC6493128F6BB8F006C5FDA /* UserView.swift in Sources */,
+				3AC6492F28F68D20006C5FDA /* AuthorizationGit.swift in Sources */,
+				3AC6493328F6F617006C5FDA /* PrivateDataLoader.swift in Sources */,
 				3AFE4F1228ED646F00EAF9D3 /* Structures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +542,7 @@
 				DEVELOPMENT_TEAM = 8XMBZV3B7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = gitinfo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -541,6 +572,7 @@
 				DEVELOPMENT_TEAM = 8XMBZV3B7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = gitinfo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -675,6 +707,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A7293F028F5A89E0087A5DE /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A7293F128F5A89E0087A5DE /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A7293F028F5A89E0087A5DE /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A3F45CA28EC84440026A06B /* Project object */;
 }

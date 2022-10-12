@@ -36,6 +36,7 @@ struct MainView: View
                     .navigationBarItems(trailing: TopBar())
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

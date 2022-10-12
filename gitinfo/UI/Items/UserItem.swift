@@ -15,11 +15,6 @@ struct UserItem: View
     {
         HStack
         {
-//            Image(systemName: "gear")
-//                .imageScale(.large)
-//                .clipShape(Circle())
-//                .shadow(radius: 6.0)
-//                .padding(16)
             AsyncImage(url: userInfo.avatarUrl)
             {
                 image in
@@ -47,7 +42,7 @@ struct UserItem: View
                     .font(.headline)
                     .lineLimit(1)
                 
-                Text("Followers: \(self.userInfo.folovers ?? 0)")
+                Text("Followers: \(userInfo.folovers ?? 0)")
                     .font(.subheadline)
                     .lineLimit(1)
             }
