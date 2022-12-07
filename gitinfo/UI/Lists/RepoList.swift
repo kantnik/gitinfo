@@ -21,12 +21,20 @@ struct RepoList: View
     {
         ScrollView(.vertical)
         {
-            LazyVStack(spacing: 0)
+            if modelView.listRepoInfo.count > 0
             {
-                ForEach(0 ..< modelView.listRepoInfo.count, id: \.self)
+                LazyVStack(spacing: 0)
                 {
-                    RepoItem(repoInfo: modelView.listRepoInfo[$0])
+                    ForEach(0 ..< modelView.listRepoInfo.count, id: \.self)
+                    {
+                        RepoItem(repoInfo: modelView.listRepoInfo[$0])
+                    }
                 }
+            }
+            else
+            {
+                ProgressView()
+                    .progressViewStyle(.circular)
             }
         }
         .task

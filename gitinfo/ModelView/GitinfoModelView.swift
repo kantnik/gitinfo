@@ -8,7 +8,26 @@
 import Foundation
 import SwiftUI
 
-final class GitinfoModelView: ObservableObject
+protocol GitModelView: ObservableObject
+{
+    var authorized: Bool { get set }
+    var searchName: String { get set }
+    var listUserInfo: [UserInfo] { get }
+    var listRepoInfo: [RepoInfo] { get }
+    var userOwnInfo: UserOwnInfo { get }
+    
+    var loader: DataLoader { get }
+    var loaderPrivate: PrivateDataLoader { get }
+    var auth: AuthorizationGit { get }
+    
+    func clearRepoList()
+    func searchUserInfo() async
+    func loadRepoInfo(index: Int) async
+    func loadOwnUserInfo() async
+    func authorization(url: URL) async
+}
+
+final class GitinfoModelView: GitModelView
 {
     @Published var authorized = false
     @Published var searchName = ""
@@ -16,8 +35,8 @@ final class GitinfoModelView: ObservableObject
     @Published var listRepoInfo = [RepoInfo]()
     @Published var userOwnInfo = UserOwnInfo(id: 0, login: "", avatarUrl: nil, name: "", location: "", email: "", bio: "")
     
-    private let loader: DataLoader
-    private let loaderPrivate: PrivateDataLoader
+    let loader: DataLoader
+    let loaderPrivate: PrivateDataLoader
     public let auth: AuthorizationGit
     
     init()

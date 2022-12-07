@@ -11,7 +11,6 @@ import Combine
 struct MainView: View
 {
     @EnvironmentObject var modelView: GitinfoModelView
-    @State var text = ""
     
     var body: some View
     {

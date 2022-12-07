@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct gitinfoApp: App {
+    @StateObject private var gitinfoModelView = GitinfoModelView()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(GitinfoModelView())
+                .environmentObject(gitinfoModelView)
         }
     }
 }

@@ -27,9 +27,6 @@ struct UserItem: View
                 Image(systemName: "person.crop.rectangle")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-//                ProgressView()
-//                    .progressViewStyle(.circular)
-//                    .foregroundColor(.white)
             }
             .frame(width: 48, height: 48)
             .clipShape(Circle())
